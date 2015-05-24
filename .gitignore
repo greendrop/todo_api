@@ -15,3 +15,11 @@
 /log/*
 !/log/.keep
 /tmp
+
+.DS_Store
+
+.env
+
+/config/application.yml
+/config/database.yml
+

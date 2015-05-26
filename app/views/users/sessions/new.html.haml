@@ -1,0 +1,38 @@
+.page-header
+  %h1
+    = t 'label.sign_in'
+
+.row
+  .col-sm-9
+    .container-fluid
+      .row
+        = form_for resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-horizontal'} do |f|
+          = render '/shared/form_errors_base', resource: f.object
+
+          = f.bootstrap_form_group :email do
+            = f.bootstrap_control_label :email, class: "col-sm-3"
+            .col-sm-9
+              = f.email_field :email, class: 'form-control'
+              = f.bootstrap_error_message_on :email
+
+          = f.bootstrap_form_group :password do
+            = f.bootstrap_control_label :password, class: "col-sm-3"
+            .col-sm-9
+              = f.password_field :password, class: 'form-control'
+              = f.bootstrap_error_message_on :password
+
+          - if devise_mapping.rememberable?
+            = f.bootstrap_form_group :remember_me do
+              .col-sm-9.col-sm-offset-3
+                .checkbox
+                  %label
+                    = f.check_box :remember_me
+                    = resource.class.human_attribute_name(:remember_me)
+                = f.bootstrap_error_message_on :remember_me
+
+          .form-group
+            .col-sm-offset-3.col-sm-9
+              = f.submit t('label.sign_in'), class: 'btn btn-primary'
+
+  .col-sm-3
+    = render "users/shared/links"

@@ -1,0 +1,7 @@
+- if resource.errors.include?(:base)
+  - messages = resource.errors.get(:base).map { |message| resource.errors.full_message(:base, message) }
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      %p.text-danger
+        = safe_join(messages, "<br />".html_safe)
+

@@ -1,0 +1,18 @@
+ja:
+  label:
+    list:     一覧
+    show:     詳細
+    new:      新規作成
+    create:   登録             
+    edit:     編集
+    update:   更新             
+    destroy:  削除
+    select:   選択
+    search:   検索
+    account:  アカウント
+    sign_in:  ログイン
+    sign_out: ログアウト
+    destroy_confirm: 削除します。よろしいですか？
+    create_success_message:  '%{model}を登録しました。'
+    update_success_message:  '%{model}を更新しました。'
+    destroy_success_message: '%{model}を削除しました。'

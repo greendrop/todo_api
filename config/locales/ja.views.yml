@@ -1,0 +1,31 @@
+ja:
+  layouts:
+    nav:
+      user:
+        edit: アカウント設定
+  users:
+    password:
+      new:                                                                                                      
+        title: パスワード変更メール送信
+        submit: 送信
+        new_password: 新しいパスワード
+        new_password_confirmation: 新しいパスワード（確認）
+      edit:
+        title: パスワード変更
+        submit: 変更
+    registrations:                                                                                               
+      new:
+        sign_up: アカウント登録
+      edit:
+        title: アカウント設定
+        destroy: アカウント削除
+        password_hint: "leave blank if you don't want to change it"
+        current_password_hint: "we need your current password to confirm your changes"
+    shared:
+      links:                                                                                                    
+        sign_in: ログイン
+        sign_up: アカウント登録
+        forget_password: パスワードをお忘れですか？
+        not_receive_confirmation: 確認メールがまだ届きませんか？
+        not_receive_unlock: ロック解除メールがまだ届きませんか？
+

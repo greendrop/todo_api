@@ -13,4 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//
+// Loads all Bootstrap javascripts
+//= require bootstrap
+//= require moment
+//= require moment/ja
+//= require bootstrap-datetimepicker
+//
+// Select2
+//= require select2
+//= require select2_locale_ja
+//
+//= require 'bootstrap/datepicker'
+//= require 'bootstrap/file_upload'
+//= require 'bootstrap/pagination'
+//= require 'bootstrap/select'
+//

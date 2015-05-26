@@ -1,0 +1,44 @@
+.page-header
+  %h1
+    = t '.title'
+
+= form_for resource, as: resource_name, url: registration_path(resource_name), html: {method: :put, class: 'form-horizontal'} do |f|
+  = render '/shared/form_errors_base', resource: f.object
+
+  = f.bootstrap_form_group :email do
+    = f.bootstrap_control_label :email, class: "col-sm-3", required: true
+    .col-sm-9
+      = f.email_field :email, class: 'form-control'
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        %span.help-block
+          Currently waiting confirmation for:
+          = resource.unconfirmed_email
+      = f.bootstrap_error_message_on :email
+
+  = f.bootstrap_form_group :password do
+    = f.bootstrap_control_label :password, class: "col-sm-3"
+    .col-sm-9
+      = f.password_field :password, autocomplete: false, class: 'form-control'
+      %span.help-block
+        = t('.password_hint')
+      = f.bootstrap_error_message_on :password
+
+  = f.bootstrap_form_group :password_confirmation do
+    = f.bootstrap_control_label :password_confirmation, class: "col-sm-3"
+    .col-sm-9
+      = f.password_field :password_confirmation, class: 'form-control'
+      = f.bootstrap_error_message_on :password_confirmation
+
+  = f.bootstrap_form_group :current_password do
+    = f.bootstrap_control_label :current_password, class: "col-sm-3", required: true
+    .col-sm-9
+      = f.password_field :current_password, class: 'form-control'
+      %span.help-block
+        = t('.current_password_hint')
+      = f.bootstrap_error_message_on :current_password
+
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit class: 'btn btn-primary'
+      = link_to t('.destroy'), registration_path(resource_name), data: {confirm: t('label.destroy_confirm')}, method: :delete, class: "btn btn-danger"
+

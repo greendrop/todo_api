@@ -1,0 +1,19 @@
+ja:
+  activerecord:                                                                                                   
+    models:
+      user: アカウント
+    attributes:                                                                                                   
+      user:                                                                                                       
+        current_sign_in_at: ログイン日時
+        current_sign_in_ip: ログインIP
+        email: メールアドレス                                                                                     
+        encrypted_password: 暗号済みパスワード
+        password: パスワード
+        password_confirmation: パスワード（確認）
+        sign_in_count: ログイン回数
+        current_password: 現在のパスワード
+        last_sign_in_at: 前回ログイン日時
+        last_sign_in_ip: 前回ログインIP
+        remember_created_at: remember_created_at
+        remember_me: 次回からパスワード入力を省く
+

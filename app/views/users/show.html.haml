@@ -1,0 +1,20 @@
+.page-header
+  %h1
+    = @user.name
+
+.media
+  .avatar.pull-left.img-polaroid
+    = link_to image_tag(@user.avatar.url(:medium)), "#{ENV['RAILS_RELATIVE_URL_ROOT']}#{@user.avatar.url}"
+
+  %p.email
+    %span.label
+      = User.human_attribute_name(:email)
+    = @user.email
+  %p.groups
+    %span.label
+      = User.human_attribute_name(:groups)
+    = @user.groups.map(&:name).join(", ")
+  .clearfix
+
+.form-actions
+  = link_to t('views.user.show.products'), user_products_url(user_id: @user), class: 'btn'

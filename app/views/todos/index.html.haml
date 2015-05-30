@@ -1,27 +1,32 @@
-%h1 Listing todos
+.page-header
+  %h1
+    = "#{Todo.model_name.human}#{t('label.list')}"
 
-%table
-  %thead
-    %tr
-      %th User
-      %th Title
-      %th Description
-      %th State
-      %th
-      %th
-      %th
+    .pull-right
+      = link_to t('label.new'), new_todo_url, class: 'btn btn-default'
 
-  %tbody
-    - @todos.each do |todo|
+- if @todos.count > 0
+  %table.table.table-hover
+    %thead
       %tr
-        %td= todo.user
-        %td= todo.title
-        %td= todo.description
-        %td= todo.state
-        %td= link_to 'Show', todo
-        %td= link_to 'Edit', edit_todo_path(todo)
-        %td= link_to 'Destroy', todo, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %th.col-md-1
+        %th.col-md-8
+        %th.col-md-3
 
-%br
+    %tbody
+      - @todos.each do |todo|
+        %tr
+          %td.text-center
+            = link_to (todo.state == :done ? fa_icon('check-square-o 2x') : fa_icon('square-o 2x')), todo_url(todo, todo: {state: (todo.state == :done ? :none : :done)}, return_url: url_for(params)), method: :patch
+          %td
+            %strong
+              = link_to todo.title, todo_url(todo)
+            %br
+            = truncate todo.description
+          %td
+            .pull-right
+              = link_to t('label.edit'), edit_todo_url(todo), class: 'btn btn-default'
+              = link_to t('label.destroy'), todo_url(todo), class: 'btn btn-danger', method: :delete, data: {confirm: t('label.destroy_confirm')}
 
-= link_to 'New Todo', new_todo_path
+  = paginate @todos, theme: 'bootstrap'
+

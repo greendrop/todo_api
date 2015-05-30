@@ -1,18 +1,11 @@
-%p#notice= notice
+.page-header
+  %h1
+    = link_to (@todo.state == :done ? fa_icon('check-square-o') : fa_icon('square-o')), todo_url(@todo, todo: {state: (@todo.state == :done ? :none : :done)}), method: :patch
+    = @todo.title
+
+    .pull-right
+      = link_to t('label.edit'), edit_todo_url(@todo), class: 'btn btn-default'
+      = link_to t('label.destroy'), todo_url(@todo), class: 'btn btn-danger', method: :delete, data: {confirm: t('label.destroy_confirm')}
 
 %p
-  %b User:
-  = @todo.user
-%p
-  %b Title:
-  = @todo.title
-%p
-  %b Description:
-  = @todo.description
-%p
-  %b State:
-  = @todo.state
-
-= link_to 'Edit', edit_todo_path(@todo)
-\|
-= link_to 'Back', todos_path
+  = simple_format(h(@todo.description))

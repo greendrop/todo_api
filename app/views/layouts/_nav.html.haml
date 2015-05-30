@@ -11,6 +11,8 @@
 
     .collapse.navbar-collapse{id: "main-navbar-collapse"}
       %ul.nav.navbar-nav
+        %li
+          = link_to Todo.model_name.human, todos_url
 
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?

@@ -1,5 +1,9 @@
-%h1 New todo
+.page-header
+  %h1
+    = "#{Todo.model_name.human}#{t('label.new')}"
 
-= render 'form'
-
-= link_to 'Back', todos_path
+= form_for @todo, html: {class: 'form-horizontal'} do |f|
+  = render partial: 'form', locals: {f: f}
+  .form-group
+    .col-sm-offset-3.col-sm-9
+      = f.submit class: 'btn btn-primary'

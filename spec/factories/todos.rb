@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :todo do
-    user nil
-title "MyString"
-description "MyText"
-state 1
+    user { create(:user) }
+    title "title"
+    description "description"
+    state 'none'
   end
 
 end

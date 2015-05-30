@@ -2,11 +2,12 @@ ja:
   activerecord:                                                                                                   
     models:
       user: アカウント
+      todo: Todo
     attributes:                                                                                                   
-      user:                                                                                                       
+      user:
         current_sign_in_at: ログイン日時
         current_sign_in_ip: ログインIP
-        email: メールアドレス                                                                                     
+        email: メールアドレス
         encrypted_password: 暗号済みパスワード
         password: パスワード
         password_confirmation: パスワード（確認）
@@ -16,4 +17,9 @@ ja:
         last_sign_in_ip: 前回ログインIP
         remember_created_at: remember_created_at
         remember_me: 次回からパスワード入力を省く
+
+      todo:                                                                                                       
+        title: タイトル
+        description: 記述
+        state: 状態
 

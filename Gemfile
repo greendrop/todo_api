@@ -100,3 +100,6 @@ gem 'enumerize',  '~> 0.11.0'
 # API plugins
 gem 'grape',  '~> 0.11.0'
 
+# OAuth 2 provider
+gem 'doorkeeper', '~> 2.2.1'
+

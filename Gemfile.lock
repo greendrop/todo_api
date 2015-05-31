@@ -178,6 +178,8 @@ GEM
     normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     pg (0.18.2)
+    puma (2.11.3)
+      rack (>= 1.1, < 2.0)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.1)
@@ -340,6 +342,7 @@ DEPENDENCIES
   momentjs-rails (>= 2.9.0)
   normalize-rails (~> 3.0.3)
   pg
+  puma
   quiet_assets (~> 1.1.0)
   rack-handlers (~> 0.7.0)
   rails (= 4.2.1)

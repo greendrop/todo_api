@@ -5,6 +5,7 @@ module API
       version 'v1'
 
       mount API::V1::Me
+      mount API::V1::Todos
 
     end
   end

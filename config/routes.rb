@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   use_doorkeeper
+  
   resources :todos
+  
   devise_for :users
 
   get 'home/index'
+
+  mount API::Root => '/api'
 
   root to: "home#index"
 
